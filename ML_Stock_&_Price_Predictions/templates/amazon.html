@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style1.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<!-- 
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>  -->
+ 
+  <title>Amazon</title>
+  
+ 
+  <script>src ="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js"</script>
+  <script>src ="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"</script>
+  <script>src ="https://www.gstatic.com/firebasejs/9.5.0/firebase-database.js"</script>
+  <script>src ="https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js"</script>
+
+</head>
+<body>
+
+
+
+
+ 
+
+<div class="row justify-content-between">
+<div class="col-5">
+    <nav class="nav">
+  <a class="nav-link" href="{{url_for('apple')}}">Apple</a>
+  <a class="nav-link" href="{{url_for('amazon')}}">Amazon</a>
+  <a class="nav-link" href ="{{url_for('nvidia')}}">Nvidia</a>
+  <a class="nav-link" href ="{{url_for('tesla')}}">Tesla</a>
+  <a class="nav-link" href ="{{url_for('google')}}">Google</a>
+  <a class="nav-link" href ="{{url_for('personal')}}">Personal</a>
+  <a class="nav-link" href ="{{url_for('home')}}">Home</a>
+</nav>
+</div> 
+
+
+
+<div class="col-4">
+  
+  
+  
+</div>
+
+
+</div>
+
+
+
+
+<!-- <form action="home.php" method="GET"></form>
+</br>
+ -->
+
+
+<div class="container">
+<div class="row">
+
+  <h3 id="home_header"> Amazon Stock Data </h3>
+
+</div>
+</div>
+
+
+
+<div class="container">
+<div class="row">
+<div class="col-11">
+  <h5 > Data: </h5>
+</div>
+</div>
+</div>
+
+<div class = "container" id = "div1">
+
+<table id="table1" class="table table-bordered table-striped">
+
+<tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Open</th>
+      <th scope="col">High</th>
+      <th scope="col">Low</th>
+      <th scope="col">Close</th>
+      <th scope="col">Volume</th>
+      <th scope="col">TradeDate</th>
+      <th scope="col">Time</th>
+    </tr>
+ 
+</table>
+</div>
+<div id = "div2" class = "container">
+<table id = "table2" class="table table-bordered table-striped">
+      {% set count = namespace() %}
+      {%set count.counter = 1%}
+      
+        {%for x in range(0,data|length)%}
+        <tr>
+        <th scope="row" >{{count.counter}}</th>
+        {% set count.counter = count.counter +1 %}
+          <td>{{data['date'][x]}}</td>
+          <td>{{data['open'][x]}}</td>
+          <td>{{data['high'][x]}}</td>
+          <td>{{data['low'][x]}}</td>
+          <td>{{data['close'][x]}}</td>
+          <td>{{data['volume'][x]}}</td>
+          <td>{{data['TradeDate'][x]}}</td>
+          <td>{{data['time'][x]}}</td>
+
+       
+        </tr>
+        {%endfor%}
+
+
+ 
+</table>
+</div>
+
+
+
+
+
+<div class = "container">
+<div class = "row justify-content-between" id = "meta">
+  <div class = "col-6">
+  <h5>Meta Data</h5>
+  {%for line in meta%}
+  <div><a>{{line}}</a></div>
+  {%endfor%}
+</div>
+
+  <div class = "col-6">
+  
+  <h5>Feature Data</h5>
+  <h7>summary open high low close volume </h7>
+  {%for line in stat%}
+  <div><a scope="col">{{line}}</a></div>
+  {%endfor%}
+  
+  </br>
+  <p>File: <a href= {{feature}} > Feature Data</a></p>
+  
+</div>
+</div>
+</div>
+
+
+  
+
+
+
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+       
+      <th scope="col">ML Algorithom</th>
+      <th scope="col">Streaming</th>
+      <th scope="col">MSE</th>
+      <th scope="col">PDF</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Linear Reg.</th>
+      <td>{{streaming}}</td>
+      <td>{{lr_mse}}</td>
+      <td><a href= {{lr_url}} > Results</a></td>
+    </tr>
+     <tr>
+      <th scope="row">KNN</th>
+      <td>{{streaming}}</td>
+      <td>{{knn_mse}}</td>
+      <td><a href= {{knn_url}} > Results</a></td>
+    </tr>
+    <tr>
+      <th scope="row">XGBoost</th>
+      <td>{{streaming}}</td>
+      <td>{{xg_mse}}</td>
+      <td><a href= {{xg_url}} > Results</a></td>
+    </tr>
+    <tr>
+      <th scope="row">LSTM</th>
+      <td>{{streaming}}</td>
+      <td>{{LSTM_MSE}}</td>
+      <td><a href= {{lstm_url}} > Results</a></td>
+    </tr>
+
+    
+  </tbody>
+</table>
+</div>
+
+
+
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>  -->
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style1.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+  
+  <script> src ="https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js"</script>
+  <script> src ="https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js"</script>
+  <script> src ="https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js"</script>
+  <script> src ="https://www.gstatic.com/firebasejs/9.4.1/firebase-storage.js"</script>
+</head>
+<body>
+
+ 
+
+<div class="row justify-content-between">
+
+  
+  
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
+    Stocks 
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton1">
+    
+    <li><a class="dropdown-item" href="{{url_for('amazon')}}">Amazon</a></li>
+    <li><a class="dropdown-item" href ="{{url_for('nvidia')}}">Nvidia</a></li>
+    <li><a class="dropdown-item" href ="{{url_for('tesla')}}">Tesla</a></li>
+    <li><a class="dropdown-item" href="{{url_for('apple')}}">Apple</a></li>
+    <li><a class="dropdown-item" href="{{url_for('google')}}">Google</a></li>
+    <li><a class="dropdown-item" href ="{{url_for('personal')}}">Personal</a></li>
+    
+  </ul> 
+</div>
+</div>
+<form action="home.php" method="GET"></form>
+</br>
+<div class="container">
+<div class="row">
+<div class="col-11">
+
+
+  <h3 id="home_header"> Tesla, Google, NVIDIA, Apple, Amazon</h3>
+  <h5>Problems in Stock</h5>
+  <h7> Stock price prediction has great significance in the field of business and finance. The stock price
+is one of the most important measurements for investors to evaluate the performance of certain
+companies and to make wise decisions for their future investments. Financial groups themselves
+also value stock price as it represents the profitability and leadership in the market. Even though
+the stock price is fluctuating, the machine learning algorithms are able to have a relatively
+reasonable prediction on it. In this project, we introduce several machine learning models for
+predicting stock prices and design a user interface for people who are not familiar with machine
+learning to use these models to get the result of future stock price</h7>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row" class="info">
+<div class="col-11" id="current_div">
+    <h5>Analysis of a Stock</h5>
+    <h7> Our analysis includes predictions from these models: Linear Regression, K Nearest Neighbors (KNN), XGBoost (extreme gradient boosting), and LSTM (Long short-term memory). As well as, different features(training error, testing error, accuracy, and MSE) to compare across the models and data will also be displayed. </h7>
+    
+</div>
+</div>
+
+<div class="container">
+<div class="row" id = "imgRow">
+<div class="slide" id="slides">
+      <img src={{textF}} class="img-fluid" alt="...">
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

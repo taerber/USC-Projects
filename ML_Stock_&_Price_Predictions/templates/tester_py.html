@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<section>
+      <div class="file_input_form">
+          
+  				<form method= "post" id = "input1" method= "POST" action = "" enctype="multipart/form-data" accept=".txt">
+  				<input type="file" id="myFile" name="filename" enctype="multipart/form-data">
+  				<input type="submit" enctype="multipart/form-data">
+  				</form>
+				
+				{% for item in list %}
+        <tr><td>{{item}}</td></tr>
+        {%endfor%}
+          
+      </div>
+</section>
+
+</body>
+</html>

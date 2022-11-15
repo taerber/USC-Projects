@@ -1,0 +1,156 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system;
+	
+	background-color: #F8FFFA !important; 
+
+}
+
+#nums{
+	justify-content: center;
+}
+.pagination {
+
+	justify-content: center;
+}
+.row{
+	justify-content: center;
+	
+}
+
+.dropdown{
+	justify-content: center;
+}
+
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #376819;
+    border-color: #376819;
+}
+
+.page-item .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #376819;
+    border-color: #376819;
+}
+#input1{
+	padding-left: 30px;
+	padding-top: 15px;
+}
+
+.col-4 {
+
+	padding-top: 10px;
+	justify-content: center;
+}
+
+
+h5{
+	justify-content: left;
+	color: black;
+}
+
+/* HOME PAGE CSS */
+#home_header {
+	text-align: center;
+	color: black;
+}
+
+#slides {
+	text-align: center;
+	justify-content: center;
+	
+}
+
+#imgRow {
+	justify-content: center;
+	
+}
+
+#current_div {
+	margin-top:30px;
+	text-align: left;
+}
+
+#pages{
+	justify-content: center;
+}
+
+#pages2{
+	justify-content: center;
+}
+#news_div{
+	margin:auto;
+}
+
+#sign-up {
+	color: grey;
+	text-align: center;
+	border: 1px solid grey;
+}
+li {
+	color: grey;
+}
+#news {
+	margin-left: 40%;
+}
+
+
+h3 {
+	color:#00036D;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 20px;
+
+}
+
+td{
+	color:#376819;
+}
+
+.nav-link {
+   color: #173420 !important;
+}
+
+#drop1{
+	margin-top: 15px;
+	margin-left: 45px;
+
+}
+
+.btn-secondary {
+    color: #33691E !important;
+    background-color: #C5E1A5 !important;
+    border-color: #6c757d;
+}
+
+.paging-nav {
+  text-align: right;
+  padding-top: 2px;
+}
+
+.paging-nav a {
+  margin: auto 1px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 7px;
+  background: #91b9e6;
+  color: white;
+  border-radius: 3px;
+}
+
+.paging-nav .selected-page {
+  background: #187ed5;
+  font-weight: bold;
+}
+
+.paging-nav,
+#tableData {
+  width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}

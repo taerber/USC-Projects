@@ -1,0 +1,6 @@
+1. Information:Intraday (1min) open, high, low, close prices and volume
+2. Symbol:AAPL
+3. Last Refreshed:2021-11-26 16:59:00
+4. Interval:1min
+5. Output Size:Full size
+6. Time Zone:US/Eastern
